@@ -6,7 +6,7 @@ londonaws='''
 { "region": "eu-west-2",
                  "sg": ["sg-0c51113a91a64fa42",], # change this
                  "sshkey": "london2", # change this
-                 "ami": "ami-064ff912f78e3e561" # This is an AWS Linux 2 AMI
+                 "ami": "ami-0015a39e4b7c0966f" # This is an Ubuntu AMI
                  }
 '''
 REGION='eu-west-2'  # For a London based deploy
