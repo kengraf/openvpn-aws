@@ -15,5 +15,5 @@ The default values in the script work well.
 
 Exit SSH
 ```
-scp -i __YOUR__.pem ubuntu@__UBUNTU_IP__8:~/client-vpn.ovpn ./__GOOD_NAME__
+scp -i __YOUR__.pem ubuntu@__UBUNTU_IP__:~/client-vpn.ovpn ./
 connect with openvpn client
