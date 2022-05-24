@@ -13,7 +13,7 @@ Using the AWS console to launch Ubuntu t2-micro in your region of choice.
 
 Update the OS
 ```
-sudo apt update
+sudo apt update -y
 sudo apt upgrade -y
 ```
 
@@ -39,13 +39,14 @@ cp /root/client.ovpn /home/ubuntu/
 Exit SSH
 ```
 scp -i __YOUR__.pem ubuntu@__UBUNTU_IP__:~/client.ovpn ./
-connect with openvpn client
-
 ```
-AMI=ami-08b6f2a5c291246a0 # AWS instance March 8, 2022
-TYPE=t2.medium # Slow but a t2.micro will work
-KEYNAME=ohio # EDIT this for your value
-SG=sg-05a87a5fbfd0fd5ae # EDIT this for your value
+
+connect with openvpn client
+```
+AMI=ami-08b6f2a5c291246a0 # AWS instance March 8, 2022  
+TYPE=t2.medium # A t2.micro is slow but will work   
+KEYNAME=ohio # EDIT this for your value  
+SG=sg-05a87a5fbfd0fd5ae # EDIT this for your value  
 INSTANCE_ID=`aws ec2 run-instances --image-id $AMI --count 1 \
   --instance-type $TYPE --key-name $KEYNAME --security-group-ids $SG \
   --output text --query 'Instances[0].InstanceId'`
